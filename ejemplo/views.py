@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.shortcuts import render
+from ejemplo.models import Familiar
 
 # Create your views here.
 
@@ -27,3 +29,8 @@ def imc(request, peso, altura):
     imc = peso / (altura * altura) 
     return render(request, "ejemplo/imc.html", {"IMC" : imc})
 '''
+
+def monstrar_familiares(request):
+    lista_familiares = Familiar.objects.all()
+    return render(request, "ejemplo/familiares.html", {"lista_familiares": lista_familiares})
+
