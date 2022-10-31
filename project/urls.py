@@ -19,9 +19,11 @@ from ejemplo.views import imc
 from ejemplo.views import index_tres
 from ejemplo.views import index_dos
 from ejemplo.views import index
-from blog.views import index as blog_index
 from ejemplo.views import monstrar_familiares # Se usa snake_case porque es una función
 from ejemplo.views import BuscarFamiliar # Se usa Camel Case porque es una clase
+from ejemplo.views import AltaFamiliar # Agregado en clase 21
+from blog.views import index as blog_index
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,5 +33,6 @@ urlpatterns = [
     path('imc/<peso>/<altura>/', imc),
     path('mi-familia/', monstrar_familiares),
     path('blog/', blog_index),
-    path('mi-familia/buscar', BuscarFamiliar.as_view()), # NUEVA RUTA PARA BUSCAR FAMILIAR
+    path('mi-familia/buscar', BuscarFamiliar.as_view()),
+    path('mi-familia/alta', AltaFamiliar.as_view()),
 ]
