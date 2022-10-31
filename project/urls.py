@@ -15,17 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-#   from ejemplo.views import imc
+from ejemplo.views import imc
 from ejemplo.views import index_tres
 from ejemplo.views import index_dos
 from ejemplo.views import index
-from ejemplo.views import monstrar_familiares
+from blog.views import index as blog_index
+from ejemplo.views import monstrar_familiares # Se usa snake_case porque es una función
+from ejemplo.views import BuscarFamiliar # Se usa Camel Case porque es una clase
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('saludar/', index), # ESTA ES LA NUEVA FUNCTION
+    path('saludar/', index),
     path('saludar/<nombre>/<apellido>/', index_dos),
     path('mostrar-notas/', index_tres),
-#    path('imc/<peso>/<altura>/', imc),
+    path('imc/<peso>/<altura>/', imc),
     path('mi-familia/', monstrar_familiares),
+    path('blog/', blog_index),
+    path('mi-familia/buscar', BuscarFamiliar.as_view()), # NUEVA RUTA PARA BUSCAR FAMILIAR
 ]
