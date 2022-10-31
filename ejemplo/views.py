@@ -51,6 +51,6 @@ class BuscarFamiliar(View):
             lista_familiares = Familiar.objects.filter(nombre__icontains=nombre).all() 
             form = self.form_class(initial=self.initial)
             return render(request, self.template_name, {'form':form, 
-                                                        'lista_familiares':lista_familiares})
+            'lista_familiares':lista_familiares})
         return render(request, self.template_name, {"form": form})
 
