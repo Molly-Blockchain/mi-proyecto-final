@@ -1,0 +1,17 @@
+{% extends 'ejemplo/base_libros.html' %}
+
+{% block titulo%}
+    Alta de nuevo Libro
+{% endblock %}
+
+{% block contenido %}
+  
+  <form action="/libros/alta_libros.html" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+  </form>
+
+  <h2 style="color:green">{{msg_exito}}</h2>
+
+{% endblock %}

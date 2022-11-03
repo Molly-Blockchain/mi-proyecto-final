@@ -1,0 +1,20 @@
+{% extends 'ejemplo/base_libros.html' %}
+
+{% block titulo%}
+    Buscar Libros por nombre
+{% endblock %}
+
+
+{% block contenido %}  
+    <form action="/libros/buscar_libros.html" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+
+    {% for libro in lista_libros %}
+        <ul>
+            <li> Nombre: {{libro.nombre}}, Autor: {{libro.autor}}, Genero: {{libro.genero}}</li>
+        </ul>
+    {% endfor %}
+{% endblock %}

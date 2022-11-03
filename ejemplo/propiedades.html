@@ -1,0 +1,13 @@
+{% extends 'ejemplo/base_propiedades.html' %}
+
+{% block titulo%}
+    Lista de todas las propiedades
+{% endblock %}
+
+{% block contenido %}
+    {% for propiedad in lista_propiedades %}
+        <ul>
+            <li> Direccion: {{propiedad.direccion}}, Municipio: {{propiedad.municipio}}, Valor: {{propiedad.valor}}</li>
+        </ul>
+    {% endfor %}
+{% endblock %}

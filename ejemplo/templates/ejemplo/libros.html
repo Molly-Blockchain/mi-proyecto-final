@@ -1,0 +1,13 @@
+{% extends 'ejemplo/base_libros.html' %}
+
+{% block titulo%}
+    Lista de todos mis Libros
+{% endblock %}
+
+{% block contenido %}
+    {% for libro in lista_libros %}
+        <ul>
+            <li> Nombre: {{libros.nombre}}, Autor: {{libros.autor}}, Genero: {{libros.genero}}</li>
+        </ul>
+    {% endfor %}
+{% endblock %}

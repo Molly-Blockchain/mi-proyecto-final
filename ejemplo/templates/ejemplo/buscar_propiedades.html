@@ -1,0 +1,20 @@
+{% extends 'ejemplo/base_propiedades.html' %}
+
+{% block titulo%}
+    Buscar Propiedades por direccion
+{% endblock %}
+
+
+{% block contenido %}  
+    <form action="/propiedades/buscar_propiedades.html" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+
+    {% for propiedad in lista_propiedades %}
+        <ul>
+            <li> Direccion: {{propiedades.direccion}}, Municipio: {{propiedades.municipio}}, Valor: {{propiedades.valor}}</li>
+        </ul>
+    {% endfor %}
+{% endblock %}

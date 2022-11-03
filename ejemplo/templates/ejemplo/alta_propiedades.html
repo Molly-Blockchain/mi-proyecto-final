@@ -1,0 +1,17 @@
+{% extends 'ejemplo/base_propiedades.html' %}
+
+{% block titulo%}
+    Alta de nueva Propiedad
+{% endblock %}
+
+{% block contenido %}
+  
+  <form action="/propiedades/alta_propiedades.html" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+  </form>
+
+  <h2 style="color:green">{{msg_exito}}</h2>
+
+{% endblock %}
