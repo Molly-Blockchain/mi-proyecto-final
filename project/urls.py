@@ -28,12 +28,12 @@ from ejemplo.views import AltaFamiliar # Agregado en clase 21
 from blog.views import index as blog_index
 
 # Modelo Propiedades
-from ejemplo.views import monstrar_propiedades # Claro, si no lo importo no funciona jajaja
+from ejemplo.views import mostrar_propiedades # Claro, si no lo importo no funciona jajaja
 from ejemplo.views import BuscarPropiedades
 from ejemplo.views import AltaPropiedades
 
 # Modelo Libros
-from ejemplo.views import monstrar_libros
+from ejemplo.views import mostrar_libros
 from ejemplo.views import BuscarLibros
 from ejemplo.views import AltaLibros
 
@@ -52,11 +52,11 @@ urlpatterns = [
     path('mi-familia/buscar', BuscarFamiliar.as_view()),
     path('mi-familia/alta', AltaFamiliar.as_view()),
     
-    path('propiedades.html', lista_propiedades),    # Mostrar propiedades (seed_data.py)
+    path('propiedades.html', mostrar_propiedades),    # Mostrar propiedades (seed_data.py)
     path('propiedades/buscar_propiedades.html', BuscarPropiedades.as_view()),   # Pruebo buscar propiedades dentro de la "categoría" propiedades
     path('propiedades/alta_propiedades.html', AltaPropiedades.as_view()),
 
-    path('libros.html', monstrar_libros),   # Mostrar libros (seed_data.py)
+    path('libros.html', mostrar_libros),   # Mostrar libros (seed_data.py)
     path('libros/buscar_libros.html', BuscarLibros.as_view()),   # Buscar libros
     path('libros/alta_libros.html', AltaLibros.as_view()),   # Cargar datos de libros
 ]

@@ -1,10 +1,23 @@
+# Zona de imports:
+
 from django.shortcuts import render
+from django.views import View
+
+# Imports de Familiar
 from ejemplo.models import Familiar
 from ejemplo.forms import Buscar
 from ejemplo.forms import FamiliarForm # Nuevo import, clase 21
-from ejemplo.forms import PropiedadesForm # import primera entrega TP final
+
+# Imports de Propiedades
+from ejemplo.models import Propiedades # import primera entrega TP final
+from ejemplo.forms import PropiedadesForm
+
+
+# Imports de Libros
 from ejemplo.forms import LibrosForm # import primera entrega TP final
-from django.views import View
+from ejemplo.forms import Libros
+
+
 
 # Create your views here.
 
@@ -84,7 +97,7 @@ class AltaFamiliar(View):
 
 # Modelo "Propiedades"
 
-def monstrar_propiedades(request):
+def mostrar_propiedades(request):
     lista_propiedades = Propiedades.objects.all()
     return render(request, "ejemplo/propiedades.html", {"lista_propiedades": lista_propiedades})
 
@@ -133,7 +146,7 @@ class AltaPropiedades(View):
 
 # Modelo "Libros"
 
-def monstrar_libros(request):
+def mostrar_libros(request):
     lista_libros = Libros.objects.all()
     return render(request, "ejemplo/libros.html", {"lista_libros": lista_libros})
 
